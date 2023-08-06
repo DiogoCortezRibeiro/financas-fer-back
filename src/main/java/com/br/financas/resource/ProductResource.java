@@ -25,11 +25,7 @@ public class ProductResource {
     @GetMapping
     public ResponseEntity<List<Product>> findAll() {
         List<Product> products = productService.findAll();
-        if (!products.isEmpty()) {
-            return ResponseEntity.ok(products);
-        }
-
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok(products);
     }
 
     @GetMapping("/{id}")
